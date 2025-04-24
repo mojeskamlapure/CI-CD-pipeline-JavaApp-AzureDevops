@@ -10,4 +10,9 @@ public class HelloController {
     public String index() {
         return "This is awesome..! I am updated now Ok..!";
     }   
+    
+    @RequestMapping("/show")
+    public String show() {
+        return "This is an amazing thing to show..!";
+    }  
 }

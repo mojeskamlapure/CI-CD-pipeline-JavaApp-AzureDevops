@@ -22,10 +22,17 @@ public class HelloControllerTest {
     private MockMvc mvc;
 
     @Test
-    public void getHello() throws Exception {
+    public void getIndex() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().string(equalTo("This is awesome..! I am updated now Ok..!")));
+    }
+    
+    @Test
+    public void testShow() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/show").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().string(equalTo("This is an amazing thing to show..!")));
     }
     
 }
